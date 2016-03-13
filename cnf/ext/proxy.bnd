@@ -1,0 +1,6 @@
+###
+proxy: \
+    http.proxyHost=192.168.11.140,\
+    http.proxyPort=8080,\
+    https.proxyHost=192.168.11.140,\
+    https.proxyPort=8080
