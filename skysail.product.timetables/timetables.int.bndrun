@@ -1,0 +1,33 @@
+########################################################################################
+### --- general settings, do not change unless you know what you are doing --------- ###
+########################################################################################
+
+-resolve.effective: active;skip:="osgi.service"
+-runee: JavaSE-1.8
+-runfw: org.apache.felix.framework;version=${org.apache.felix.framework.version}
+-runrepos: ${runrepos}
+-runsystemcapabilities: ${native_capability}
+-runsystempackages: ${runsystempackages}
+-runtrace: false
+-runvm: -ea
+-runproperties: ${runproperties},\
+    product.bundle=${p}.int
+
+########################################################################################
+### --- run-file-specific settings ------------------------------------------------- ###
+########################################################################################
+
+skysail.config.path            = config
+logback.configurationFile.path = config
+
+-runbundles: \
+	${serverbundles-1.0.0},\
+	skysail.product.timetables.int;version=latest,\
+	skysail.server.ext.initconfig;version=latest,\
+	skysail.server.polymer;version=latest,\
+	skysail.server.app.timetables;version=latest,\
+    skysail.server.purecss.webresource;version=latest,\
+    skysail.server.uikit.webresource;version=latest,\
+	skysail.server.w2ui.webresource;version=latest
+
+
