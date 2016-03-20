@@ -46,14 +46,14 @@
 
 <body>
 <!-- Modal Login -->
-<div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myLogin" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <form id="login-form">
 
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h5 class="modal-title" id="myModalLabel">Bitte Zugangsdaten eingeben</h5>
+                    <h5 class="modal-title" id="enterLoginTitle">Bitte Zugangsdaten eingeben</h5>
                 </div>
                 <div class="modal-body">
                     <input class="form-control" id="inputEmail" placeholder="E-Mail" type="text" name="email">
@@ -69,13 +69,13 @@
 </div> <!-- End Modal Login -->
 
 <!-- Modal Send Message -->
-<div class="modal fade" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="sendMessage" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <form >
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h5 class="modal-title" id="myModalLabel">Nachricht an Kursteilnehmer eingeben</h5>
+          <h5 class="modal-title" id="enterMessageTitle">Nachricht an Kursteilnehmer eingeben</h5>
         </div>
         <div class="modal-body">
           <div class="form-group">
@@ -90,6 +90,34 @@
               <textarea class="form-control" rows="3" id="message"></textarea><br>
             </div>
           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancelMessageBtn" class="btn btn-default" data-dismiss="modal" autocomplete="off">Abbrechen</button>
+          <button type="submit" class="btn btn-success">Senden</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Subscribe for Course -->
+<div class="modal fade" id="subscribeCourse" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <form >
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="subscribeCourseTitle">Kurs Aerobic abonnieren</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="courseinfo" class="col-lg-2 control-label">E-Mail</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="inputEmail" placeholder="Ihre E-Mail-Adresse" type="text" name="email">
+                <span class="help-block">So erhalten Sie Infos zu Kursänderungen direkt von Ihrem Kursleiter!</span>
+            </div>
+          </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" id="cancelMessageBtn" class="btn btn-default" data-dismiss="modal" autocomplete="off">Abbrechen</button>
