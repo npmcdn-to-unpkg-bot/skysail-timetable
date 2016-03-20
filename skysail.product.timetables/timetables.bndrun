@@ -1,4 +1,3 @@
-
 ########################################################################################
 ### --- general settings, do not change unless you know what you are doing --------- ###
 ########################################################################################
@@ -16,12 +15,12 @@
 ### --- run-file-specific settings ------------------------------------------------- ###
 ########################################################################################
 
-skysail.config.path            = config/common,config/local
+skysail.config.path            = config/common, config/local
 logback.configurationFile.path = config/local
 
 -runbundles: \
 	${serverbundles-minimal-1.0.0},\
-	skysail.product.timetables.int;version='[0.1.0,0.2)',\
+	skysail.product.timetables.int;version=latest,\
 	skysail.server.ext.initconfig;version=latest,\
-	skysail.server.app.notes;version=latest,\
+	skysail.server.app.timetables;version=latest,\
 	skysail.server.polymer;version=latest

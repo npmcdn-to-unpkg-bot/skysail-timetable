@@ -31,8 +31,7 @@ Private-Package:  \
     ${restlet},\
     lombok;version=1.16
     
-Include-Resource: config=config
-
+Include-Resource: config=config, templates=templates
 
 -dsannotations: *
 

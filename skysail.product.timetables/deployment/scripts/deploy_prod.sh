@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 ##########################################################################
-### Deployment Script SSP Notes Integration ##############################
+### Deployment Script SSP timetables Integration ##############################
 ##########################################################################
 
 ### CONFIGURATION ########################################################
@@ -9,7 +9,7 @@ echo ""
 echo "Script Configuration:"
 echo "---------------------"
 
-APPNAME="notes"
+APPNAME="timetables"
 STAGE="prod"
 
 MAIN_DEPLOY_SCRIPT=../../../skysail.server/deployment/scripts/deploy.sh
