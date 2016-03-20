@@ -1,6 +1,9 @@
 export interface Course {
     id: number;
-    name: string;
+    coursename: string;
     room: string;
+    timefrom: string;
+    timeto: string;
+    dayofweek: string;
     trainer: string;
 }
