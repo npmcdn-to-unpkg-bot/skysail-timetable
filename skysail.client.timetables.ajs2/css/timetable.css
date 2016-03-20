@@ -8,3 +8,59 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+.navbar-brand {
+padding: 14.5px 15px;
+}
+
+.navbar-brand > img {
+  padding: 0px 0 0px 0;
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.jumbotron {
+  padding-bottom: 0px;
+}
+
+.courseBtn-right {
+  float: right !important;
+  margin-right: 15px;
+  margin-top: -25px;
+}
+
+.panel-heading {
+  padding: 23px 15px;
+}
+/*Course List*/
+
+.course-list {
+	padding: 23px 0px 0px 0px;
+	margin: -15px;
+	background: #fff;
+	color: #5f6468;
+}
+
+.course-list-item {
+	list-style: none;
+	line-height: 0.9;
+	padding: 14px 47px 15px 15px;
+}
+
+.course-listBtn-right {
+  float: right !important;
+  margin-right: 68px;
+  margin-top: -15px;
+}
+
+.course-list-item:hover, a.course-list-item:focus {
+	text-decoration: none;
+	background-color: #f6f6f6;
+}
+
+.courseAction {
+  float:right;
+  margin-right: 61px;
+  margin-top: -10px;
+}
