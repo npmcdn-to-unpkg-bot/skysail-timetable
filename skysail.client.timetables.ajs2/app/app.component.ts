@@ -1,13 +1,9 @@
 import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import { HeroService } from './hero.service';
 import { CourseService } from './course.service';
 
 import { DashboardComponent } from './dashboard.component';
-
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
 
 import { CoursesComponent } from './courses.component';
 import { CourseDetailComponent } from './course-detail.component';
@@ -21,7 +17,6 @@ import { CourseDetailComponent } from './course-detail.component';
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        HeroService,
         CourseService
     ]
 })
@@ -31,16 +26,6 @@ import { CourseDetailComponent } from './course-detail.component';
         name: 'Dashboard',
         component: DashboardComponent,
         useAsDefault: true
-    },
-    {
-        path: '/detail/:id',
-        name: 'HeroDetail',
-        component: HeroDetailComponent
-    },
-    {
-        path: '/heroes',
-        name: 'Heroes',
-        component: HeroesComponent
     },
     {
         path: '/courses',
