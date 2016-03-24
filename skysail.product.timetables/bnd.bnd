@@ -6,12 +6,11 @@ Private-Package:  \
     io.skysail.product.timetables
 
 -buildpath: \
+    ${osgi},\
+    ${common},\
     osgi.cmpn;version=${osgi.version},\
     skysail.domain;version=${skysail.domain.version},\
     skysail.api;version=${skysail.api.version},\
-    skysail.api.features;version='[0.1.2,0.1.3)',\
-    skysail.api.text;version=${skysail.api.text.version},\
-    skysail.api.um;version=${skysail.api.um.version},\
     skysail.server;version=${skysail.server.version},\
     skysail.server.app.timetables;version='[0.1.0,0.1.1)',\
     skysail.server.converter;version=${skysail.server.converter.version},\
