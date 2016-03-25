@@ -14,16 +14,13 @@ import io.skysail.server.app.timetables.course.*;
 import io.skysail.server.app.timetables.course.resources.*;
 
 
-/**
- * generated from entityResource.stg
- */
-public class TimetableResourceGen extends EntityServerResource<io.skysail.server.app.timetables.timetable.Timetable> {
+public class TimetableResource extends EntityServerResource<io.skysail.server.app.timetables.timetable.Timetable> {
 
     private String id;
     private TimetablesApplication app;
     private TimetableRepository repository;
 
-    public TimetableResourceGen() {
+    public TimetableResource() {
         addToContext(ResourceContextId.LINK_TITLE, "details");
         addToContext(ResourceContextId.LINK_GLYPH, "search");
     }
@@ -49,12 +46,12 @@ public class TimetableResourceGen extends EntityServerResource<io.skysail.server
 
 	@Override
     public List<Link> getLinks() {
-        return super.getLinks(PutTimetableResourceGen.class,PostCourseResourceGen.class,CoursesResourceGen.class);
+        return super.getLinks(PutTimetableResourceGen.class,PostCourseResource.class,CoursesResourceGen.class, PostTimetableToNewCourseRelationResource.class, TimetablesCoursesResource.class);
     }
 
     @Override
     public String redirectTo() {
-        return super.redirectTo(TimetablesResourceGen.class);
+        return super.redirectTo(TimetablesResource.class);
     }
 
 

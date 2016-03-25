@@ -38,6 +38,6 @@ public class PutTimetableResourceGen extends PutEntityServerResource<io.skysail.
 
     @Override
     public String redirectTo() {
-        return super.redirectTo(TimetablesResourceGen.class);
+        return super.redirectTo(TimetablesResource.class);
     }
 }

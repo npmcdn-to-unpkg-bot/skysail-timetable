@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -24,21 +26,23 @@ public class Course implements Identifiable, Serializable {
 	@Id
     private String id;
 
+	@Field(inputType = InputType.TEXT, htmlPolicy = HtmlPolicy.NO_HTML)
+	@Size(min=2)
+	@NotNull
+	private String coursename;
+	
     @Field(inputType = InputType.TIME, htmlPolicy = HtmlPolicy.NO_HTML)
-    private Date start;
+    private Date timefrom;
 
 
     @Field(inputType = InputType.TIME, htmlPolicy = HtmlPolicy.NO_HTML)
-    private Date end;
-
-    @Field(inputType = InputType.TEXT, htmlPolicy = HtmlPolicy.NO_HTML)
-    private String coursename;
+    private Date timeto;
 
     @Field(inputType = InputType.TEXT, htmlPolicy = HtmlPolicy.NO_HTML)
     private String room;
 
     @Field(inputType = InputType.TEXT, htmlPolicy = HtmlPolicy.NO_HTML)
-    private String weekday;
+    private String dayofweek;
 
     @Field(inputType = InputType.TEXT, htmlPolicy = HtmlPolicy.NO_HTML)
     private String trainer;

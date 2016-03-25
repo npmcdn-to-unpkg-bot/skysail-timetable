@@ -43,6 +43,6 @@ public class PostTimetableResourceGen extends PostEntityServerResource<io.skysai
 
     @Override
     public String redirectTo() {
-        return super.redirectTo(TimetablesResourceGen.class);
+        return super.redirectTo(TimetablesResource.class);
     }
 }

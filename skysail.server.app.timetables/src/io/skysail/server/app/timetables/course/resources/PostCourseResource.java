@@ -1,40 +1,29 @@
 package io.skysail.server.app.timetables.course.resources;
 
-import java.util.Date;
-
-import io.skysail.api.responses.SkysailResponse;
-import io.skysail.domain.core.repos.Repository;
-import io.skysail.server.ResourceContextId;
-import io.skysail.server.restlet.resources.PostEntityServerResource;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.restlet.resource.ResourceException;
-import io.skysail.server.app.timetables.*;
 
-import io.skysail.server.app.timetables.timetable.*;
-import io.skysail.server.app.timetables.timetable.resources.*;
-import io.skysail.server.app.timetables.course.*;
-import io.skysail.server.app.timetables.course.resources.*;
+import io.skysail.domain.core.repos.Repository;
+import io.skysail.server.ResourceContextId;
+import io.skysail.server.app.timetables.TimetablesApplication;
+import io.skysail.server.app.timetables.course.Course;
+import io.skysail.server.app.timetables.timetable.Timetable;
+import io.skysail.server.restlet.resources.PostEntityServerResource;
 
-
-
-/**
- * generated from postResourceNonAggregate.stg
- */
-public class PostCourseResourceGen extends PostEntityServerResource<io.skysail.server.app.timetables.course.Course> {
+public class PostCourseResource extends PostEntityServerResource<io.skysail.server.app.timetables.course.Course> {
 
 	private TimetablesApplication app;
     private Repository repository;
 
-    public PostCourseResourceGen() {
+    public PostCourseResource() {
         addToContext(ResourceContextId.LINK_TITLE, "Create new ");
     }
 
     @Override
     protected void doInit() throws ResourceException {
         app = (TimetablesApplication) getApplication();
-        repository = null;//app.getRepository(Space.class);
+        repository = app.getRepository(Timetable.class);
     }
 
     @Override
@@ -46,7 +35,7 @@ public class PostCourseResourceGen extends PostEntityServerResource<io.skysail.s
     public void addEntity(io.skysail.server.app.timetables.course.Course entity) {
         Subject subject = SecurityUtils.getSubject();
 
-        io.skysail.server.app.timetables.timetable.Timetable entityRoot = (io.skysail.server.app.timetables.timetable.Timetable) repository.findOne(getAttribute("id"));
+        Timetable entityRoot = (Timetable) repository.findOne(getAttribute("id"));
         entityRoot.getCourses().add(entity);
         repository.update(entityRoot, app.getApplicationModel());
     }

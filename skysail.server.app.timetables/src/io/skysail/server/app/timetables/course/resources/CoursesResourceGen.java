@@ -43,6 +43,6 @@ public class CoursesResourceGen extends ListServerResource<io.skysail.server.app
     }
 
     public List<Link> getLinks() {
-       return super.getLinks(PostCourseResourceGen.class);
+       return super.getLinks(PostCourseResource.class);
     }
 }

@@ -16,20 +16,17 @@ import io.skysail.server.app.timetables.course.*;
 import io.skysail.server.app.timetables.course.resources.*;
 
 
-/**
- * generated from listResource.stg
- */
-public class TimetablesResourceGen extends ListServerResource<io.skysail.server.app.timetables.timetable.Timetable> {
+public class TimetablesResource extends ListServerResource<io.skysail.server.app.timetables.timetable.Timetable> {
 
     private TimetablesApplication app;
     private TimetableRepository repository;
 
-    public TimetablesResourceGen() {
-        super(TimetableResourceGen.class);
+    public TimetablesResource() {
+        super(TimetableResource.class);
         addToContext(ResourceContextId.LINK_TITLE, "list Timetables");
     }
 
-    public TimetablesResourceGen(Class<? extends TimetableResourceGen> cls) {
+    public TimetablesResource(Class<? extends TimetableResource> cls) {
         super(cls);
     }
 
@@ -40,7 +37,6 @@ public class TimetablesResourceGen extends ListServerResource<io.skysail.server.
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public List<io.skysail.server.app.timetables.timetable.Timetable> getEntity() {
         Filter filter = new Filter(getRequest());
         Pagination pagination = new Pagination(getRequest(), getResponse(), repository.count(filter));
@@ -49,6 +45,6 @@ public class TimetablesResourceGen extends ListServerResource<io.skysail.server.
 
     @Override
     public List<Link> getLinks() {
-              return super.getLinks(PostTimetableResourceGen.class,TimetablesResourceGen.class);
+              return super.getLinks(PostTimetableResourceGen.class,TimetablesResource.class);
     }
 }

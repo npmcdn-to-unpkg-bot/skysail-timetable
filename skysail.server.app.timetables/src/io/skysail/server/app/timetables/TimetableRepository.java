@@ -4,13 +4,12 @@ package io.skysail.server.app.timetables;
 import org.osgi.service.component.annotations.*;
 
 import io.skysail.domain.core.repos.DbRepository;
+import io.skysail.server.app.timetables.course.Course;
+import io.skysail.server.app.timetables.timetable.Timetable;
 import io.skysail.server.db.*;
 
-/**
- * generated from repository.stg
- */
 @Component(immediate = true, property = "name=TimetablesRepository")
-public class TimetableRepository extends GraphDbRepository<io.skysail.server.app.timetables.timetable.Timetable> implements DbRepository {
+public class TimetableRepository extends GraphDbRepository<Timetable> implements DbRepository {
 
     @Reference
     public void setDbService(DbService dbService) {
@@ -23,9 +22,14 @@ public class TimetableRepository extends GraphDbRepository<io.skysail.server.app
 
     @Activate
     public void activate() {
-        //log.debug("activating io.skysail.server.app.timetables.timetable.Timetable" Repository);
-        dbService.createWithSuperClass("V", DbClassName.of(io.skysail.server.app.timetables.timetable.Timetable.class));
-        dbService.register(io.skysail.server.app.timetables.timetable.Timetable.class);
+        dbService.createWithSuperClass("V", 
+        		DbClassName.of(Timetable.class),
+        		DbClassName.of(Course.class)
+        	);
+        dbService.register(
+        		Timetable.class,
+        		Course.class
+        	);
     }
 
 }
