@@ -2,24 +2,16 @@ package io.skysail.server.app.timetables.timetable;
 
 import java.util.List;
 
-import io.skysail.server.queryfilter.Filter;
-import io.skysail.server.queryfilter.pagination.Pagination;
 import io.skysail.api.links.Link;
+import io.skysail.server.app.timetables.TimetableRepository;
+import io.skysail.server.app.timetables.TimetablesApplication;
+import io.skysail.server.app.timetables.course.Course;
 import io.skysail.server.restlet.resources.PostRelationResource2;
-import io.skysail.server.app.timetables.*;
-
-import io.skysail.server.app.timetables.timetable.*;
-import io.skysail.server.app.timetables.timetable.resources.*;
-import io.skysail.server.app.timetables.course.*;
-import io.skysail.server.app.timetables.course.resources.*;
 
 
-/**
- * generated from postRelationToNewEntityResource.stg
- */
 public class PostTimetableToNewCourseRelationResource extends PostRelationResource2<Course> {
 
-    private TimetablesApplicationGen app;
+    private TimetablesApplication app;
     private TimetableRepository repo;
     private String parentId;
 

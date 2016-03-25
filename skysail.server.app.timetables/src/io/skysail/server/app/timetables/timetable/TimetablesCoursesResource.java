@@ -5,7 +5,6 @@ import java.util.List;
 import io.skysail.api.links.Link;
 import io.skysail.server.ResourceContextId;
 import io.skysail.server.app.timetables.TimetablesApplication;
-import io.skysail.server.app.timetables.TimetablesApplicationGen;
 import io.skysail.server.app.timetables.course.Course;
 import io.skysail.server.app.timetables.timetable.resources.TimetableResourceGen;
 import io.skysail.server.restlet.resources.ListServerResource;
@@ -16,8 +15,7 @@ import io.skysail.server.restlet.resources.ListServerResource;
  */
 public class TimetablesCoursesResource extends ListServerResource<Course> {
 
-    private TimetablesApplicationGen app;
-   // private CourseRepository oeRepo;
+    private TimetablesApplication app;
 
     public TimetablesCoursesResource() {
         super(TimetableResourceGen.class);//, TimetablesTimetableResource.class);

@@ -1,8 +1,6 @@
-Bundle-Version: 0.1.1.${tstamp}
+Bundle-Version: 0.1.0.${tstamp}
 
 Bundle-Description: generated code from the application designer bundle
-
-src: src,src-gen,test-gen
 
 Service-Component: *
 
@@ -22,8 +20,6 @@ Include-Resource: resources, templates=src;recursive:=true;filter:=*.st|*.stg
     lombok;version=1.16.2,\
     skysail.api;version=${skysail.api.version},\
     skysail.api.search;version=${skysail.api.search.version},\
-    skysail.api.text;version=${skysail.api.text.version},\
-    skysail.api.um;version=${skysail.api.um.version},\
     skysail.domain;version=${skysail.domain.version},\
     skysail.server;version=${skysail.server.version},\
     skysail.server.queryfilter;version=${skysail.server.queryfilter.version},\
@@ -37,7 +33,6 @@ Include-Resource: resources, templates=src;recursive:=true;filter:=*.st|*.stg
     com.orientechnologies.orientdb-core;version=${com.orientechnologies.orientdb.version},\
     com.orientechnologies.orientdb-graphdb;version=${com.orientechnologies.orientdb.version},\
     io.skysail.bundled.tinkerpop.blueprints-core;version=2.6,\
-    skysail.server.uikit.webresource;version=latest,\
     org.jsoup;version=1.8,\
     com.fasterxml.jackson.core.jackson-annotations;version=2.5    
 

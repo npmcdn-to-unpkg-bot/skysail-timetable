@@ -3,28 +3,23 @@ package io.skysail.server.app.timetables.timetable;
 import java.util.List;
 
 import io.skysail.server.app.timetables.TimetableRepository;
-import io.skysail.server.app.timetables.TimetablesApplicationGen;
+import io.skysail.server.app.timetables.TimetablesApplication;
 import io.skysail.server.app.timetables.course.Course;
 import io.skysail.server.queryfilter.Filter;
 import io.skysail.server.restlet.resources.PostRelationResource;
 
 
-/**
- * generated from postRelationResource.stg
- */
-public class PostTimetablesCourseRelationResource extends PostRelationResource<io.skysail.server.app.timetables.timetable.Timetable, io.skysail.server.app.timetables.course.Course> {
+public class PostTimetablesCourseRelationResource extends PostRelationResource<Timetable, Course> {
 
-    private TimetablesApplicationGen app;
-   // private CourseRepository CourseRepo;
+    private TimetablesApplication app;
     private TimetableRepository TimetableRepo;
 
     public PostTimetablesCourseRelationResource() {
-        // addToContext(ResourceContextId.LINK_TITLE, "add");
     }
 
     @Override
     protected void doInit() {
-        app = (TimetablesApplicationGen) getApplication();
+        app = (TimetablesApplication) getApplication();
      //   CourseRepo = (CourseRepository) app.getRepository(io.skysail.server.app.timetables.course.Course.class);
         //userRepo = (UserRepository) app.getRepository(io.skysail.server.app.oEService.User.class);
     }

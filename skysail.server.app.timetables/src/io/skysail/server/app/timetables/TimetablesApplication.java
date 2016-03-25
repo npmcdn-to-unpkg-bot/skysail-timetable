@@ -6,18 +6,28 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
+import org.osgi.service.event.EventAdmin;
 
+import de.twenty11.skysail.server.core.restlet.RouteBuilder;
 import io.skysail.server.app.ApplicationProvider;
+import io.skysail.server.app.SkysailApplication;
+import io.skysail.domain.Identifiable;
 import io.skysail.domain.core.Repositories;
 import io.skysail.server.app.ApiVersion;
 import io.skysail.server.menus.MenuItemProvider;
 
 @Component(immediate = true)
-public class TimetablesApplication extends TimetablesApplicationGen implements ApplicationProvider, MenuItemProvider {
+public class TimetablesApplication extends SkysailApplication implements ApplicationProvider, MenuItemProvider {
+
+    public static final String LIST_ID = "lid";
+    public static final String TODO_ID = "id";
+    public static final String APP_NAME = "Timetables";
+
+    @Reference(cardinality = ReferenceCardinality.OPTIONAL)
+    private volatile EventAdmin eventAdmin;
 
     public  TimetablesApplication() {
-        super("Timetables", new ApiVersion(1), Arrays.asList());
-        //addToAppContext(ApplicationContextId.IMG, "/static/img/silk/page_link.png");
+        super("Timetables", new ApiVersion(1));
     }
 
     @Reference(policy = ReferencePolicy.DYNAMIC, cardinality = ReferenceCardinality.MANDATORY)
@@ -27,6 +37,28 @@ public class TimetablesApplication extends TimetablesApplicationGen implements A
 
     public void unsetRepositories(Repositories repo) {
         super.setRepositories(null);
+    }
+
+    @Override
+    protected void attach() {
+        super.attach();
+        router.attach(new RouteBuilder("/Timetables/{id}", io.skysail.server.app.timetables.timetable.resources.TimetableResourceGen.class));
+        router.attach(new RouteBuilder("/Timetables/", io.skysail.server.app.timetables.timetable.resources.PostTimetableResourceGen.class));
+        router.attach(new RouteBuilder("/Timetables/{id}/", io.skysail.server.app.timetables.timetable.resources.PutTimetableResourceGen.class));
+        router.attach(new RouteBuilder("/Timetables", io.skysail.server.app.timetables.timetable.resources.TimetablesResourceGen.class));
+        router.attach(new RouteBuilder("", io.skysail.server.app.timetables.timetable.resources.TimetablesResourceGen.class));
+        router.attach(new RouteBuilder("/Timetables/{id}/Courses", io.skysail.server.app.timetables.timetable.TimetablesCoursesResource.class));
+        router.attach(new RouteBuilder("/Timetables/{id}/Courses/", io.skysail.server.app.timetables.timetable.PostTimetableToNewCourseRelationResource.class));
+        router.attach(new RouteBuilder("/Timetables/{id}/Courses/{targetId}", io.skysail.server.app.timetables.timetable.TimetablesCourseResource.class));
+        router.attach(new RouteBuilder("/Courses/{id}", io.skysail.server.app.timetables.course.resources.CourseResourceGen.class));
+        router.attach(new RouteBuilder("/Courses/", io.skysail.server.app.timetables.course.resources.PostCourseResourceGen.class));
+        router.attach(new RouteBuilder("/Courses/{id}/", io.skysail.server.app.timetables.course.resources.PutCourseResourceGen.class));
+        router.attach(new RouteBuilder("/Courses", io.skysail.server.app.timetables.course.resources.CoursesResourceGen.class));
+
+    }
+
+    public EventAdmin getEventAdmin() {
+        return eventAdmin;
     }
 
 }
