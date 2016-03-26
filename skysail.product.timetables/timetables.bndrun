@@ -21,6 +21,4 @@ logback.configurationFile.path = config/local
 -runbundles: \
 	${serverbundles-minimal-1.0.0},\
 	skysail.product.timetables.int;version=latest,\
-	skysail.server.ext.initconfig;version=latest,\
-	skysail.server.app.timetables;version=latest,\
-	skysail.server.polymer;version=latest
+	skysail.server.app.timetables;version=latest
