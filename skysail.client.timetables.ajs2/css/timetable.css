@@ -33,6 +33,7 @@ padding: 14.5px 15px;
 .panel-heading {
   padding: 23px 15px;
 }
+
 /*Course List*/
 
 .course-list {
@@ -59,8 +60,43 @@ padding: 14.5px 15px;
 	background-color: #f6f6f6;
 }
 
+.green {
+ color: #439a46;
+}
+
+
+.label {
+font-size: 120%;
+}
+
+.courseCell {
+  border: medium none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease 0s;
+  padding: 5px 0px 5px 16px;
+  margin-bottom: 10px;
+  width:
+}
+
+.courseCell:hover, a.courseCell:focus {
+	text-decoration: none;
+	background-color: #f6f6f6;
+}
+
 .courseAction {
   float:right;
-  margin-right: 12px;
-  margin-top: -10px;
+  margin-right: 14px;
+  margin-top: -58px;
+  display: none;
+}
+
+  .courseCell:hover .courseAction {
+     display: block;
+  }
+
+hr {
+    width: 2%;
+    height: 5px;
+    margin: 0 auto;
+    background: #ffffff;
 }

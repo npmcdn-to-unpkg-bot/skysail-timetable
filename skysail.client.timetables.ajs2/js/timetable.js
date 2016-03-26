@@ -25,3 +25,6 @@ $.clearFormFields = function(area) {
 $('#sendMessage').on('hidden.bs.modal', function(){
 $.clearFormFields(this)
 });
+
+//set tooltips
+$('[data-tooltip="tooltip"]').tooltip();

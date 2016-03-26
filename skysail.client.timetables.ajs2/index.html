@@ -7,14 +7,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <base href="/"/>
 
     <title>skysail kursplan</title>
 
-    <link rel="shortcut icon" href="img/logo_fav.png">
-    <link rel="icon" href="img/logo_fav.png">
+
+
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -68,6 +67,136 @@
     </div>
 </div> <!-- End Modal Login -->
 
+<!-- Modal Add Course -->
+<div class="modal fade" id="addCourse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <form id="newCourse-form">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="myModalLabel">Neuen Kurs hinzufügen</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Kursname</label>
+            <div class="col-lg-10">
+              <input class="form-control" id="inputEmail" placeholder="Zumba, Pilates, ..." type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Raum</label>
+            <div class="col-lg-10">
+              <select class="form-control">
+                <option>Freigelände</option>
+                <option>Große Halle</option>
+                <option>Kleine Halle</option>
+                <option>Mehrzweckhalle</option>
+                <option>Reharaum</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Wochentag</label>
+            <div class="col-lg-10">
+              <select class="form-control" id="select">
+                <option value="monday">Montag</option>
+                <option value="tuesday">Dienstag</option>
+                <option value="wednesday">Mittwoch</option>
+                <option value="thursday">Donnerstag</option>
+                <option value="friday">Freitag</option>
+                <option value="saturday" selected>Samstag</option>
+                <option value="sunday">Sonntag</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Zeit von</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="15:00">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Zeit bis</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="16:00">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+          <button type="submit" class="btn btn-success">Hinzufügen</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> <!--end Modal Add Course -->
+
+<!-- Modal Edit Course -->
+<div class="modal fade" id="editCourse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <form id="newCourse-form">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="myModalLabel">Kurs bearbeiten</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Kursname</label>
+            <div class="col-lg-10">
+              <input class="form-control" id="inputEmail" placeholder="Zumba, Pilates, ..." type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Raum</label>
+            <div class="col-lg-10">
+              <select class="form-control">
+                <option>Freigelände</option>
+                <option>Große Halle</option>
+                <option>Kleine Halle</option>
+                <option>Mehrzweckhalle</option>
+                <option>Reharaum</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Wochentag</label>
+            <div class="col-lg-10">
+              <select class="form-control" id="select">
+                <option value="monday">Montag</option>
+                <option value="tuesday">Dienstag</option>
+                <option value="wednesday">Mittwoch</option>
+                <option value="thursday">Donnerstag</option>
+                <option value="friday">Freitag</option>
+                <option value="saturday" selected>Samstag</option>
+                <option value="sunday">Sonntag</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Zeit von</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="15:00">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Zeit bis</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="16:00">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+          <button type="submit" class="btn btn-success">Hinzufügen</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> <!--end Modal Edit Course -->
+
 <!-- Modal Send Message -->
 <div class="modal fade" id="sendMessage" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -75,10 +204,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h5 class="modal-title" id="enterMessageTitle">Nachricht an Kursteilnehmer eingeben</h5>
+          <h5 class="modal-title" id="enterMessageTitle">Aktuelle Kursmeldung verfassen</h5>
         </div>
         <div class="modal-body">
-          <div class="form-group">
+        <!--  <div class="form-group">
             <label for="courseinfo" class="col-lg-2 control-label">Betreff</label>
             <div class="col-lg-10">
               <input class="form-control" type="text" id="courseinfo">
@@ -86,19 +215,44 @@
           </div>
           <div class="form-group">
           <label for="message" class="col-lg-2 control-label">Nachricht</label>
-            <div class="col-lg-10">
-              <textarea class="form-control" rows="3" id="message"></textarea><br>
-            </div>
-          </div>
+            <div class="col-lg-10">-->
+              <textarea class="form-control" rows="3" id="message" placeholder="Ihre Meldung hier eingeben"></textarea><br>
+              <span class="help-block">Ihre Meldung wird im Kursplan veröffentlicht.<br>
+                Zusätzlich erhalten die Kursteilnehmer, die den Kurs abonniert haben, eine Benachrichtigung.</span>
+          <!--  </div>
+          </div> -->
         </div>
         <div class="modal-footer">
           <button type="button" id="cancelMessageBtn" class="btn btn-default" data-dismiss="modal" autocomplete="off">Abbrechen</button>
-          <button type="submit" class="btn btn-success">Senden</button>
+          <button type="submit" class="btn btn-success">Veröffentlichen</button>
         </div>
       </div>
     </form>
   </div>
+</div> <!-- End Modal Send Message -->
+
+<!-- Modal Delete Course -->
+<div class="modal fade" id="deleteCourse" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Kurs löschen</h4>
+      </div>
+      <div class="modal-body">
+        <p>Sind Sie sicher, daß Sie den Kurs löschen möchten?</p>
+        <span class="help-block">Wenn Sie den Kurs löschen, erhalten alle Kursteilnehmer, die den Kurs abonniert haben,
+          keine Benachrichtigungen mehr.</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="deleteCourseBtn" class="btn btn-default" data-dismiss="modal" autocomplete="off">Abbrechen</button>
+        <button type="button" class="btn btn-success">Löschen</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- End Modal Delete Course -->
 
 <!-- Modal Subscribe for Course -->
 <div class="modal fade" id="subscribeCourse" tabindex="-1" role="dialog">
@@ -146,6 +300,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/timetable.js"></script>
 
 </body>
