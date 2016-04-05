@@ -2,9 +2,6 @@ Bundle-Version: 0.1.0.${tstamp}
 
 Bundle-Name: SKYSAIL :: product :: timetables
 
-Private-Package:  \
-    io.skysail.product.timetables
-
 -buildpath: \
     ${osgi},\
     ${common},\
@@ -21,6 +18,7 @@ Private-Package:  \
     
 Include-Resource: config=config, templates=templates
 
--dsannotations: *
+Private-Package:  \
+    io.skysail.product.timetables
 
--sub: *.bnd
+-dsannotations: *
