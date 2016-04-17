@@ -9,5 +9,8 @@ export var COURSES: Course[] = [
 	{"id": "6", "coursename": "Pilates", "timefrom": "14:00", "timeto":"14:45", "dayofweek":"Mittwoch", "room": "Mehrzweckhalle", "trainer": "Ricky", "hasMessage":false},
 	{"id": "7", "coursename": "Pilates", "timefrom": "14:00", "timeto":"14:45", "dayofweek":"Sonntag", "room": "Mehrzweckhalle", "trainer": "Ricky", "hasMessage":false},
 	{"id": "8", "coursename": "Pilates", "timefrom": "14:00", "timeto":"14:45", "dayofweek":"Sonntag", "room": "Mehrzweckhalle", "trainer": "Ricky", "hasMessage":false},
-	{"id": "9", "coursename": "Zumba 02", "timefrom": "8:00", "timeto":"9:00", "dayofweek":"Samstag", "room": "Große Halle", "trainer": "Carola", "hasMessage":true}
+	{"id": "9", "coursename": "Zumba 02", "timefrom": "8:00", "timeto":"9:00", "dayofweek":"Samstag", "room": "Große Halle", "trainer": "Carola", "hasMessage":true},
+	{"id": "10", "coursename": "Zumba 02", "timefrom": "8:00", "timeto":"9:00", "dayofweek":"Samstag", "room": "Große Halle", "trainer": "Carola", "hasMessage":true},
+	{"id": "11", "coursename": "Zumba 02", "timefrom": "8:00", "timeto":"9:00", "dayofweek":"Samstag", "room": "Große Halle", "trainer": "Carola", "hasMessage":true},
+	{"id": "12", "coursename": "Zumba 02", "timefrom": "8:00", "timeto":"9:00", "dayofweek":"Samstag", "room": "Große Halle", "trainer": "Carola", "hasMessage":true}
 ];

@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <base href=""/>
-
+    <base href="/"/>
+    <link rel="shortcut icon" href="img/calendar.png">
     <title>skysail kursplan</title>
 
 
@@ -44,6 +44,7 @@
 </head>
 
 <body>
+
 <!-- Modal Login -->
 <div class="modal fade" id="myLogin" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -67,6 +68,61 @@
     </div>
 </div> <!-- End Modal Login -->
 
+<!-- Modal Edit Timetable -->
+<div class="modal fade" id="editTimetable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <form id="editTimetable-form">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="myModalLabel">Kursplan bearbeiten</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-10">
+              <input class="form-control" id="" placeholder="Mein Kursplan" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-lg-2 control-label">Gültig von</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-lg-2 control-label">Gültig bis</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-lg-2 control-label">Typ</label>
+            <div class="col-lg-10">
+              <select class="form-control">
+                <option>Regulärer Kursplan</option>
+                <option>Außerordentlicher Kursplan</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="" class="col-lg-2 control-label">Gehört zu</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="">
+              <span class="help-block">Falls außerordentlich, bitte den Namen des dazugehörigen regulären Kursplans angeben.</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+          <button type="submit" class="btn btn-success">Ändern</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> <!--end Modal Edit Timetable -->
+
 <!-- Modal Add Course -->
 <div class="modal fade" id="addCourse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -79,9 +135,9 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Kursname</label>
+            <label for="" class="col-lg-2 control-label">Kursname</label>
             <div class="col-lg-10">
-              <input class="form-control" id="inputEmail" placeholder="Zumba, Pilates, ..." type="text">
+              <input class="form-control" id="" placeholder="Zumba, Pilates, ..." type="text" maxlength="10">
             </div>
           </div>
           <div class="form-group">
@@ -111,13 +167,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Zeit von</label>
+            <label for="" class="col-lg-2 control-label">Zeit von</label>
             <div class="col-lg-10">
               <input class="form-control" type="text" placeholder="15:00">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Zeit bis</label>
+            <label for="" class="col-lg-2 control-label">Zeit bis</label>
             <div class="col-lg-10">
               <input class="form-control" type="text" placeholder="16:00">
             </div>
@@ -144,9 +200,9 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Kursname</label>
+            <label for="" class="col-lg-2 control-label">Kursname</label>
             <div class="col-lg-10">
-              <input class="form-control" id="inputEmail" placeholder="Zumba, Pilates, ..." type="text">
+              <input class="form-control" id="" placeholder="Zumba, Pilates, ..." type="text">
             </div>
           </div>
           <div class="form-group">
@@ -176,13 +232,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Zeit von</label>
+            <label for="" class="col-lg-2 control-label">Zeit von</label>
             <div class="col-lg-10">
               <input class="form-control" type="text" placeholder="15:00">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Zeit bis</label>
+            <label for="" class="col-lg-2 control-label">Zeit bis</label>
             <div class="col-lg-10">
               <input class="form-control" type="text" placeholder="16:00">
             </div>
@@ -190,7 +246,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-          <button type="submit" class="btn btn-success">Hinzufügen</button>
+          <button type="submit" class="btn btn-success">Ändern</button>
         </div>
       </div>
     </form>
@@ -223,13 +279,8 @@
           </div> -->
         </div>
         <div class="modal-footer">
-<<<<<<< HEAD
           <button type="button" id="cancelMessageBtn" class="btn btn-default" data-dismiss="modal" autocomplete="off">Abbrechen</button>
           <button type="submit" class="btn btn-success">Veröffentlichen</button>
-=======
-          <button type="button" id="cancelMessageBtn" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-          <button type="submit" class="btn btn-success">Senden</button>
->>>>>>> e99699593919116f7dd342c889d91146a05f6e6e
         </div>
       </div>
     </form>
@@ -292,12 +343,8 @@
 
 <my-app>Loading...</my-app>
 
+<my-footer>Loading...</my-footer>
 
-<hr>
-
-<footer>
-    <p>&copy; 2016 skysail</p>
-</footer>
 
 <!-- Bootstrap core JavaScript
   ================================================== -->
