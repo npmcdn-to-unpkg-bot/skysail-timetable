@@ -1,5 +1,8 @@
 package io.skysail.server.app.timetables;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
@@ -7,6 +10,7 @@ import org.osgi.service.component.annotations.ReferencePolicy;
 import org.osgi.service.event.EventAdmin;
 import org.restlet.data.LocalReference;
 import org.restlet.routing.Router;
+import org.restlet.service.CorsService;
 
 import de.twenty11.skysail.server.core.restlet.RouteBuilder;
 import io.skysail.domain.core.Repositories;
@@ -38,6 +42,11 @@ public class TimetablesApplication extends SkysailApplication implements Applica
 
     public  TimetablesApplication() {
         super("Timetables", new ApiVersion(1));
+        
+        CorsService corsService = new CorsService();         
+        corsService.setAllowedOrigins(new HashSet(Arrays.asList("*")));
+        corsService.setAllowedCredentials(true);
+        getServices().add(corsService);
     }
 
     @Reference(policy = ReferencePolicy.DYNAMIC, cardinality = ReferenceCardinality.MANDATORY)
@@ -52,6 +61,7 @@ public class TimetablesApplication extends SkysailApplication implements Applica
     @Override
     protected void attach() {
         super.attach();
+        
         router.attach(new RouteBuilder("/Timetables/{id}", TimetableResource.class));
         router.attach(new RouteBuilder("/Timetables/", PostTimetableResourceGen.class));
         router.attach(new RouteBuilder("/Timetables/{id}/", PutTimetableResourceGen.class));
@@ -63,6 +73,7 @@ public class TimetablesApplication extends SkysailApplication implements Applica
         router.attach(new RouteBuilder("/Courses/{id}", CourseResourceGen.class));
         router.attach(new RouteBuilder("/Courses/{id}/", PutCourseResourceGen.class));
         
+        // -- can be called like "io.skysail.server.app.SkysailApplication.createStaticDirectory()" with skysail.server 0.2.0 version --
         LocalReference localReference = LocalReference.createClapReference(LocalReference.CLAP_THREAD, "/Timetables/");
 
         CompositeClassLoader customCL = new CompositeClassLoader();

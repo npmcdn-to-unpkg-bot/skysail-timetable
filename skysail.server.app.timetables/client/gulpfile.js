@@ -26,6 +26,7 @@ var PATHS = {
     ts: ['client/**/*.ts'],
     html: 'client/**/*.html',
     css: 'client/**/*.css',
+    js: 'client/**/*.js',
     img: 'client/**/*.{svg,jpg,png,ico}'
   },
   dist: 'dist',
@@ -78,8 +79,15 @@ gulp.task('img', function() {
     .pipe(gulp.dest(PATHS.distClient));
 });
 
+gulp.task('js', function() {
+	  return gulp
+	    .src(PATHS.client.js)
+	    .pipe(changed(PATHS.distClient))
+	    .pipe(gulp.dest(PATHS.distClient));
+	});
+
 gulp.task('bundle', function(done) {
-  runSequence('clean', ['libs', 'ts', 'html', 'css', 'img'], done);
+  runSequence('clean', ['libs', 'ts', 'html', 'css', 'js', 'img'], done);
 });
 
 gulp.task('server:restart', function(done) {

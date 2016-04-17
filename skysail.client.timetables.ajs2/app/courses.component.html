@@ -1,3 +1,5 @@
+<my-course-modal>Loading...</my-course-modal>
+
 <div class="jumbotron">
   <div class="container">
 
@@ -45,7 +47,7 @@
       </div>
       <div class="panel-body">
         <div class="addCourseBtn-right">
-          <a href="#editTimetable" data-toggle="modal" data-tooltip="tooltip" title="Kurs hinzufügen">
+          <a href="#addCourse" data-toggle="modal" data-tooltip="tooltip" title="Kurs hinzufügen">
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           </a>
         </div>
@@ -53,7 +55,6 @@
         <div class="event-calendar-detail">
           <ul class="calendar-header">
             <li id="coursesOnMonday">
-
               <div *ngFor="#course of courses">
                   <span  *ngIf="course.dayofweek=='Montag'">
                     <div class="courseCell">
@@ -72,11 +73,6 @@
                   </div>
                   </span>
                 </div>
-
-
-
-
-
             </li>
             <li id="coursesOnTuesday">
 

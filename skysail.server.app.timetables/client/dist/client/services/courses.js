@@ -14,34 +14,32 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var angular2_1 = require('angular2/angular2');
 var http_1 = require('angular2/http');
-var stocks = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
-var StocksService = (function () {
-    function StocksService(Http) {
+var courses = [];
+var CoursesService = (function () {
+    function CoursesService(Http) {
         this.http = Http;
     }
-    StocksService.prototype.get = function () {
-        return stocks;
+    CoursesService.prototype.get = function () {
+        return courses;
     };
-    StocksService.prototype.add = function (stock) {
-        stocks.push(stock);
+    CoursesService.prototype.add = function (course) {
+        courses.push(course);
         return this.get();
     };
-    StocksService.prototype.remove = function (stock) {
-        stocks.splice(stocks.indexOf(stock), 1);
+    CoursesService.prototype.remove = function (course) {
+        courses.splice(courses.indexOf(course), 1);
         return this.get();
     };
-    StocksService.prototype.load = function (symbols) {
-        if (symbols) {
-            return this.http.get('http://localhost:8080/api/snapshot?symbols=' + symbols.join())
-                .map(function (res) { return res.json(); });
-        }
+    CoursesService.prototype.load = function () {
+        return this.http.get('http://localhost:2018/Timetables/v1/Timetables/16:0/Courses?media=json')
+            .map(function (res) { return res.json(); });
     };
-    StocksService = __decorate([
+    CoursesService = __decorate([
         __param(0, angular2_1.Inject(http_1.Http)), 
         __metadata('design:paramtypes', [Object])
-    ], StocksService);
-    return StocksService;
+    ], CoursesService);
+    return CoursesService;
 })();
-exports.StocksService = StocksService;
+exports.CoursesService = CoursesService;
 
-//# sourceMappingURL=../services/stocks.js.map
+//# sourceMappingURL=../services/courses.js.map
