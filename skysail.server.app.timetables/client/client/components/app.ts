@@ -15,6 +15,28 @@ import {Manage} from './manage';
 @View({
   directives: [RouterOutlet, RouterLink],
   template: `
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-calendar green" aria-hidden="true"></span> skysail kursplan</a>
+
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="#myLogin" data-toggle="modal">Anmelden</a></li>
+              <li><a href="/courses">[Angemeldet]</a></li>
+              <li><a href="/dashboard">[Abgemeldet]</a></li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
@@ -30,6 +52,15 @@ import {Manage} from './manage';
       <router-outlet></router-outlet>
     </main>
   </div>
+
+  <hr>
+  <div class="container">
+    <div class="myfooter">
+      <footer>Copyright &copy; skysail.io 2016</footer>
+    </div>
+  </div>
+
+
   `
 })
 export class App {

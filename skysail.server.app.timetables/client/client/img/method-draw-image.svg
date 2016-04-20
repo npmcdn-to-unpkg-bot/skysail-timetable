@@ -1,0 +1,17 @@
+<svg width="130" height="70" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#ffffff" id="canvas_background" height="64" width="132" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="118.449997" x2="147.508474" y1="118.449997" x1="88.5" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="144.449997" x2="82.5" y1="100.449997" x1="82.5" stroke-width="1.5" stroke="#000" fill="none"/>
+  <text font-weight="normal" style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="40" id="svg_3" y="33.950012" x="6" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">skysail</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="22" id="svg_4" y="60.950012" x="9" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#439a46">kursplan</text>
+ </g>
+</svg>
