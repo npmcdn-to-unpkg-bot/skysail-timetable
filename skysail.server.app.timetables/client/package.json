@@ -1,7 +1,7 @@
 {
-  "name": "demoapp",
+  "name": "skysail timetables client",
   "version": "0.1.0",
-  "description": "Stock tracker in Angular 2",
+  "description": "An agular2 client for skysail timetables application",
   "main": "server/bootstrap.js",
   "scripts": {
     "start": "npm install && node ./node_modules/gulp/bin/gulp.js go"

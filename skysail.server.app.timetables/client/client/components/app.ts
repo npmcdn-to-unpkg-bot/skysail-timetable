@@ -2,12 +2,12 @@ import {Component, View} from 'angular2/angular2';
 import {RouteConfig, Router, RouterOutlet, RouterLink} from 'angular2/router';
 
 import {Dashboard} from './dashboard';
-import {Manage} from './manage';
+import {Plans} from './plans';
 import {Home} from './home';
 
 @RouteConfig([
   {path: '/', as: 'Dashboard', component: Dashboard},
-  {path: '/manage', as: 'Manage', component: Manage},
+  {path: '/plans', as: 'Plans', component: Plans},
   {path: '/home', as: 'Home', component: Home}
 ])
 
@@ -47,7 +47,7 @@ import {Home} from './home';
     <div class="myfooter">
       <footer>Copyright &copy; skysail.io 2016...
         <a class="mdl-navigation__link" [router-link]="['/Dashboard']">Dashboard</a>
-        <a class="mdl-navigation__link" [router-link]="['/Manage']">Manage</a>
+        <a class="mdl-navigation__link" [router-link]="['/Plans']">Plans</a>
         <a class="mdl-navigation__link" [router-link]="['/Home']">Home</a>
       </footer>
     </div>
