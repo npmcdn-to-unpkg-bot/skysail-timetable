@@ -10,22 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var angular2_2 = require('angular2/angular2');
-var Home = (function () {
-    function Home() {
+var SkysailTimetable = (function () {
+    function SkysailTimetable() {
     }
-    Home = __decorate([
+    SkysailTimetable = __decorate([
         angular2_1.Component({
-            selector: 'home'
-        }),
-        angular2_1.View({
-            directives: [angular2_1.NgFor, angular2_2.FORM_DIRECTIVES],
-            templateUrl: 'client/components/html/home.html'
+            selector: 'skysail-timetable',
+            template: 'hi'
         }), 
         __metadata('design:paramtypes', [])
-    ], Home);
-    return Home;
+    ], SkysailTimetable);
+    return SkysailTimetable;
 })();
-exports.Home = Home;
+exports.SkysailTimetable = SkysailTimetable;
 
-//# sourceMappingURL=../components/home.js.map
+//# sourceMappingURL=../components/skysail-timetable.component.js.map
