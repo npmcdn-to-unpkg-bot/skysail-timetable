@@ -15,9 +15,6 @@ var courses_1 = require('../services/courses');
 var Dashboard = (function () {
     function Dashboard(service) {
         //this.symbols = service.get();
-        var _this = this;
-        service.load()
-            .subscribe(function (courses) { return _this.courses = courses; });
     }
     Dashboard = __decorate([
         angular2_1.Component({
@@ -26,7 +23,7 @@ var Dashboard = (function () {
         }),
         angular2_1.View({
             directives: [angular2_1.NgIf, angular2_1.NgFor, summary_1.Summary],
-            template: "\n    <div class=\"mdl-grid\">\n      <div class=\"mdl-cell mdl-cell--12-col\" *ng-if=\"!courses\" style=\"text-align: center;\">\n        Loading II\n      </div>\n      <div class=\"mdl-cell mdl-cell--3-col\" *ng-for=\"#course of courses\">\n        {{course.coursename}}\n      </div>\n    </div>\n  "
+            template: "\n    <div class=\"mdl-grid\">\n      <div class=\"mdl-cell mdl-cell--12-col\" *ng-if=\"!courses\" style=\"text-align: center;\">\n        Loading II\n      </div>\n      hihere\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [courses_1.CoursesService])
     ], Dashboard);

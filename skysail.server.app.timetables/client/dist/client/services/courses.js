@@ -31,8 +31,6 @@ var CoursesService = (function () {
         return this.get();
     };
     CoursesService.prototype.load = function () {
-        return this.http.get('http://localhost:2018/Timetables/v1/Timetables/16:0/Courses?media=json')
-            .map(function (res) { return res.json(); });
     };
     CoursesService = __decorate([
         __param(0, angular2_1.Inject(http_1.Http)), 

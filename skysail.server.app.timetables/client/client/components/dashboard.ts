@@ -15,9 +15,7 @@ import {CoursesService, CourseInterface} from '../services/courses';
       <div class="mdl-cell mdl-cell--12-col" *ng-if="!courses" style="text-align: center;">
         Loading II
       </div>
-      <div class="mdl-cell mdl-cell--3-col" *ng-for="#course of courses">
-        {{course.coursename}}
-      </div>
+      hihere
     </div>
   `
 })
@@ -28,7 +26,7 @@ export class Dashboard {
   constructor(service: CoursesService) {
     //this.symbols = service.get();
 
-    service.load()
-    .subscribe(courses => this.courses = courses);
+    //service.load()
+    //.subscribe(courses => this.courses = courses);
   }
 }

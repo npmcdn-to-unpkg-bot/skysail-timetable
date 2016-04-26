@@ -31,10 +31,10 @@ export class CoursesService {
 
   load() {
     //if (symbols) {
-      return this.http.get('http://localhost:2018/Timetables/v1/Timetables/16:0/Courses?media=json')
+     /* return this.http.get('http://localhost:2018/Timetables/v1/Timetables/16:0/Courses?media=json')
         // .toRx()
         .map(res => res.json())
         ;
-    //}
+*/    //}
   }
 }

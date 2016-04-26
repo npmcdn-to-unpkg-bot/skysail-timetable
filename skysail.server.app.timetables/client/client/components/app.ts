@@ -3,11 +3,13 @@ import {RouteConfig, Router, RouterOutlet, RouterLink} from 'angular2/router';
 
 import {Dashboard} from './dashboard';
 import {Plans} from './plans';
+import {PlansComponent} from './plans.component';
 import {Home} from './home';
 
 @RouteConfig([
   {path: '/', as: 'Dashboard', component: Dashboard},
-  {path: '/plans', as: 'Plans', component: Plans},
+ // {path: '/plans', as: 'Plans', component: Plans},
+  {path: '/plansComponent', as: 'PlansComponent', component: PlansComponent},
   {path: '/home', as: 'Home', component: Home}
 ])
 
@@ -17,7 +19,7 @@ import {Home} from './home';
 @View({
   directives: [RouterOutlet, RouterLink],
   template: `
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <!--<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,7 +37,7 @@ import {Home} from './home';
           </ul>
       </div>
     </div>
-  </nav>
+  </nav>-->
 
   <main class="mdl-layout__content" style="padding: 20px;">
     <router-outlet></router-outlet>
@@ -47,7 +49,7 @@ import {Home} from './home';
     <div class="myfooter">
       <footer>Copyright &copy; skysail.io 2016...
         <a class="mdl-navigation__link" [router-link]="['/Dashboard']">Dashboard</a>
-        <a class="mdl-navigation__link" [router-link]="['/Plans']">Plans</a>
+        <a class="mdl-navigation__link" [router-link]="['/PlansComponent']">PlansII</a>
         <a class="mdl-navigation__link" [router-link]="['/Home']">Home</a>
       </footer>
     </div>
