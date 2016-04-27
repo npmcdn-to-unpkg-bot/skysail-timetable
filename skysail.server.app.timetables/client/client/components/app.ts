@@ -5,6 +5,7 @@ import {Dashboard} from './dashboard';
 import {Plans} from './plans';
 import {PlansComponent} from './plans.component';
 import {Home} from './home';
+import {SkysailTimetable} from './skysail-timetable.component'
 
 @RouteConfig([
   {path: '/', as: 'Dashboard', component: Dashboard},
@@ -17,7 +18,7 @@ import {Home} from './home';
   selector: 'app'
 })
 @View({
-  directives: [RouterOutlet, RouterLink],
+  directives: [RouterOutlet, RouterLink,SkysailTimetable],
   template: `
   <!--<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -42,6 +43,9 @@ import {Home} from './home';
   <main class="mdl-layout__content" style="padding: 20px;">
     <router-outlet></router-outlet>
   </main>
+  
+   new:
+  <skysail-timetable>Loading...</skysail-timetable>
 
 <hr>
   <hr>
