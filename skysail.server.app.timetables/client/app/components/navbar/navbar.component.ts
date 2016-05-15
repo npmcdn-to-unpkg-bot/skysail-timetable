@@ -26,7 +26,6 @@ import {AuthService} from '../../services/auth.service';
             <ul class="nav navbar-nav">
               <li class="active"><a [routerLink]="['Index']">Index <span class="sr-only">(current)</span></a></li>
               <li class="active"><a [routerLink]="['Courses']">Courses <span class="sr-only">(current)</span></a></li>
-              <li class="active"><a [routerLink]="['Spotify']">Spotify <span class="sr-only">(current)</span></a></li>
             </ul>
             
             <ul class="nav navbar-nav pull-xs-right">
