@@ -1,8 +1,9 @@
 <html>
 
   <head>
-    <base href="/" />
-    <title>Timetables</title>
+    <!--<base href="/" />-->
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>Skysail Demo Application</title>
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 
@@ -18,10 +19,15 @@
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    
+    <script src="app/lib/js.cookie/js.cookie.js"></script>
+
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
-        packages: {
+        packages: {        
           app: {
             format: 'register',
             defaultExtension: 'js'
