@@ -34,15 +34,24 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/observable/forkJoin
                     this.isLoading = true;
                     this.courses = [];
                     console.log("constructor called");
-                    _backend.setBaseUrl('http://jsonplaceholder.typicode.com/');
+                    _backend.setBaseUrl('http://localhost:2018/demoapp/v1/');
+                    _backend.setBaseUrl('http://85.25.22.126:8391/demoapp/v1/');
                 }
                 CoursesComponent.prototype.onInit = function () {
-                    console.log("Am I ever called?");
                 };
                 CoursesComponent.prototype.ngOnInit = function () {
                     var _this = this;
+                    var headers = new http_1.Headers({
+                        "access-control-request-method": "POST",
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Basic ' + btoa('username' + ':' + 'password')
+                    });
+                    var options = new http_1.RequestOptions({
+                        headers: headers
+                    });
                     console.log("oninit called");
-                    this._backend.get('posts')
+                    this._backend.get('Timetables/16:0/?media=json', options)
                         .subscribe(function (res) { return _this.courses = res; });
                     //.subscribe(res => console.log(res));
                 };

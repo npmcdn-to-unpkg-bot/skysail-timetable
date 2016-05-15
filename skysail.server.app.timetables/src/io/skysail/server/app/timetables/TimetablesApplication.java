@@ -65,11 +65,11 @@ public class TimetablesApplication extends SkysailApplication implements Applica
         router.attach(new RouteBuilder("/Timetables/{id}", TimetableResource.class));
         router.attach(new RouteBuilder("/Timetables/", PostTimetableResourceGen.class));
         router.attach(new RouteBuilder("/Timetables/{id}/", PutTimetableResourceGen.class));
-        router.attach(new RouteBuilder("/Timetables", TimetablesResource.class));
-        router.attach(new RouteBuilder("", TimetablesResource.class));
-        router.attach(new RouteBuilder("/Timetables/{id}/Courses", TimetablesCoursesResource.class));
-        router.attach(new RouteBuilder("/Timetables/{id}/Courses/", PostTimetableToNewCourseRelationResource.class));
-        router.attach(new RouteBuilder("/Timetables/{id}/Courses/{targetId}", TimetablesCourseResource.class));
+        router.attach(new RouteBuilder("/Timetables", TimetablesResource.class).noAuthenticationNeeded());
+        router.attach(new RouteBuilder("", TimetablesResource.class).noAuthenticationNeeded());
+        router.attach(new RouteBuilder("/Timetables/{id}/Courses", TimetablesCoursesResource.class).noAuthenticationNeeded());
+        router.attach(new RouteBuilder("/Timetables/{id}/Courses/", PostTimetableToNewCourseRelationResource.class).noAuthenticationNeeded());
+        router.attach(new RouteBuilder("/Timetables/{id}/Courses/{targetId}", TimetablesCourseResource.class).noAuthenticationNeeded());
         router.attach(new RouteBuilder("/Courses/{id}", CourseResourceGen.class));
         router.attach(new RouteBuilder("/Courses/{id}/", PutCourseResourceGen.class));
         

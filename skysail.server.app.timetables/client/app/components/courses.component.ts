@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {HTTP_PROVIDERS, RequestOptions, Headers} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 
@@ -17,16 +17,28 @@ export class CoursesComponent implements OnInit {
     
     constructor(private _backend: BackendServices){        
         console.log("constructor called");
-        _backend.setBaseUrl('http://jsonplaceholder.typicode.com/');
+        _backend.setBaseUrl('http://localhost:2018/demoapp/v1/');
+        _backend.setBaseUrl('http://85.25.22.126:8391/demoapp/v1/')
     }
     
     onInit() {
-        console.log("Am I ever called?")
     }
     
     ngOnInit(){
+        
+        var headers = new Headers({
+            "access-control-request-method": "POST",
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic ' + btoa('username' + ':' + 'password')
+        });
+
+        var options = new RequestOptions({
+            headers: headers
+        });
+        
         console.log("oninit called");
-        this._backend.get('posts')
+        this._backend.get('Timetables/16:0/?media=json', options)
             .subscribe(res => this.courses = res);
         //.subscribe(res => console.log(res));
     }

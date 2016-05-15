@@ -38,7 +38,9 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                     var options = new RequestOptions({
                         headers: headers
                     });*/
-                    return this._http.get(this._baseUrl + path)
+                    var headers = new http_1.Headers();
+                    headers.append('Authorization', 'Basic YWRtaW46c2t5c2FpbA==');
+                    return this._http.get(this._baseUrl + path, { headers: headers })
                         .map(function (res) { return res.json(); });
                 };
                 BackendServices = __decorate([

@@ -15,6 +15,7 @@ export class BackendServices {
     }
     
     get(path){
+        
         /*var headers = new Headers({
             "access-control-request-method": "POST"
         });
@@ -23,7 +24,9 @@ export class BackendServices {
             headers: headers
         });*/
         
-        return this._http.get(this._baseUrl + path)
+        var headers = new Headers();
+        headers.append('Authorization', 'Basic YWRtaW46c2t5c2FpbA==');
+        return this._http.get(this._baseUrl + path, { headers: headers })
             .map(res => res.json());
     }
 
