@@ -10,7 +10,7 @@ Import-Package: org.osgi.framework,\
 
 Service-Component: *
 
-Include-Resource: Timetables/v1=client/dist, resources, templates=src;recursive:=true;filter:=*.st|*.stg
+Include-Resource: Timetables/v1=client, resources, templates=src;recursive:=true;filter:=*.st|*.stg
 
 -buildpath:  \
     ${osgi},\

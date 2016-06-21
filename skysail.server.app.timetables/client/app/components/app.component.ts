@@ -1,11 +1,11 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
 
-import {CoursesComponent} from './components/courses.component';
-import {IndexComponent} from './components/index.component';
-import {FooterComponent} from './components/footer.component';
+import {CoursesComponent} from './courses.component';
+import {IndexComponent} from './index.component';
+import {FooterComponent} from './footer/footer.component';
 
-import {Navbar} from './components/navbar/navbar.component';
+import {Navbar} from './navbar/navbar.component';
 
 @RouteConfig([
     { path: '/courses', as: 'Courses', component: CoursesComponent },
